@@ -1,0 +1,39 @@
+package com.gallery.manage.common.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.gallery.manage.admin.pojo.SysUserRoleVO;
+import com.gallery.manage.common.mapper.SysUserRoleMapper;
+import com.gallery.manage.common.model.SysUserRole;
+import com.gallery.manage.common.service.SysUserRoleService;
+import com.github.pagehelper.PageInfo;
+import com.light.core.model.CommonResult;
+import com.light.core.model.Page;
+import com.light.core.utils.PageUtil;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author auto generate
+ * @since 2020-04-09
+ */
+@Service
+public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {
+
+    @Override
+    public SysUserRole getUserRoleDetailByUserId(Long userId) {
+        return baseMapper.getUserRoleDetailByUserId(userId);
+    }
+
+
+    @Override
+    public List<SysUserRole> query(SysUserRole sysUserRole) {
+        return baseMapper.query(sysUserRole);
+    }
+}
